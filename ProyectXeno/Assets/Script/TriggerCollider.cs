@@ -10,7 +10,7 @@ public class TriggerCollider : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -20,8 +20,10 @@ public class TriggerCollider : MonoBehaviour
 
     }
     void OnTriggerEnter(Collider col)
-    {
+    { if (col.transform.tag == "Ship")
+        {
 
-        Levels.getInstance().IveBeenTriggered();
+            Levels.getInstance().IveBeenTriggered();
+        }
     }
 }
