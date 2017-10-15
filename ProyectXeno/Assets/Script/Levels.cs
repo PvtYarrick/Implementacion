@@ -42,7 +42,7 @@ public class Levels : MonoBehaviour {
         Destroy(_nivelactual);
         _nivelactual = _siguientenivel;
         i++;
-        PlaceForTheNextLevel += Vector3.forward * 10;
+        PlaceForTheNextLevel += Vector3.forward * 40;
     }
 
 
