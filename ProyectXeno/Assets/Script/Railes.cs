@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-/*
+
 
 public enum PlayMode
 {
@@ -12,10 +12,10 @@ public enum PlayMode
 
 [ExecuteInEditMode]
 
-public class Railes : MonoBehaviour {
+public class Railes : MonoBehaviour
+{
 
-    private Transform[] nodes;
-
+    public Transform[] nodes;
     private void Start()
     {
         nodes = GetComponentsInChildren<Transform>();
@@ -26,11 +26,11 @@ public class Railes : MonoBehaviour {
         switch (mode)
         {
             default:
-            case PlayMode.Linear:
-                return LinearPosition(seg, ratio);
             case PlayMode.Catmull:
                 return CatmullPosition(seg, ratio);
-                
+            case PlayMode.Linear:
+                return LinearPosition(seg, ratio);
+
         }
     }
 
@@ -45,7 +45,7 @@ public class Railes : MonoBehaviour {
     {
         Vector3 p1, p2, p3, p4;
 
-        if(seg == 0)
+        if (seg == 0)
         {
             p1 = nodes[seg].position;
             p2 = p1;
@@ -70,7 +70,7 @@ public class Railes : MonoBehaviour {
         float t2 = ratio * ratio;
         float t3 = t2 * ratio;
 
-        float x = 
+        float x =
             0.5f * ((2.0f * p2.x)
             + (-p1.x + p3.x)
             * ratio + (2.0f * p1.x - 5.0f * p2.x + 4 * p3.x - p4.x)
@@ -95,16 +95,17 @@ public class Railes : MonoBehaviour {
 
         return new Vector3(x, y, z);
     }
-    
+
 
 
     private void OnDrawGizmos()
     {
-            for (int i = 0; i < nodes.Length - 1; i++)
+        for (int i = 0; i < nodes.Length - 1; i++)
         {
             Handles.DrawDottedLine(nodes[i].position, nodes[i + 1].position, 3.0f);
         }
     }
 
-}*/
+}
+
 
