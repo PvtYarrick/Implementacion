@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-
+/*
 
 public enum PlayMode
 {
@@ -106,5 +106,5 @@ public class Railes : MonoBehaviour {
         }
     }
 
-}
+}*/
 
