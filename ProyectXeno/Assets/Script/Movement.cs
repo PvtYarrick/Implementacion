@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
-    public Railes rail;
+    /*public Railes rail;
 
     public PlayMode mode;
 
@@ -41,6 +41,6 @@ public class Movement : MonoBehaviour
 
         transform.position = rail.PositionOnRail(currentSeg, transition, mode);
 
-    }
+    }*/
 
 }
