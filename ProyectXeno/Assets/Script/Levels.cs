@@ -44,7 +44,7 @@ public class Levels : MonoBehaviour {
     public void IveBeenTriggered() {
         //for (int i = 0; i < 6; i++) {
             
-            GameObject _siguientenivel = Instantiate(niveles[Random.Range(1,10)], transform.position, Quaternion.identity);
+            Instantiate(niveles[Random.Range(1,10)], transform.position, Quaternion.identity);
         print(Random.Range(1, 10));
             //PlaceForTheNextLevel += Vector3.forward * 40;
             /*GameObject segundoNivel = Instantiate(niveles[i + 1], transform.position, Quaternion.identity);

@@ -5,6 +5,14 @@ public class Movement : MonoBehaviour
 {
     public Railes rail;
 
+    //Shooting stuff
+    public GameObject Shoot;
+    public Transform ShootSpawn;
+    private float fireDelta = 0.5F;
+    private float nextFire = 1F;
+    private float myTime = 0.0F;
+
+
     public PlayMode mode;
 
     public float speed = 5f;
@@ -21,6 +29,8 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        myTime = myTime + Time.deltaTime;
+
         if (!rail)
             return;
 
@@ -41,6 +51,13 @@ public class Movement : MonoBehaviour
         {
             speed = 0f;
             whereAmI = currentSeg;
+        }
+        if (Input.GetButton ("Fire1") && myTime > nextFire)
+        {
+            nextFire = myTime + fireDelta;
+            Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+            nextFire = nextFire - myTime;
+            myTime = 0.0F;
         }
 
     }
