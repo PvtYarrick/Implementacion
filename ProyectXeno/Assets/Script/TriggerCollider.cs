@@ -20,7 +20,7 @@ public class TriggerCollider : MonoBehaviour
 
     }
     void OnTriggerEnter(Collider col)
-    { if (col.transform.tag == "Ship")
+    { if (col.transform.tag == "Ship" || col.transform.tag == "Shielded")
         {
 
             Levels.getInstance().IveBeenTriggered();

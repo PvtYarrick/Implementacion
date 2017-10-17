@@ -15,7 +15,8 @@ public class Movement : MonoBehaviour
 
     public PlayMode mode;
 
-    public float speed = 5f;
+    public float moveSpeed = 10f;
+    private float speed = 5f;
     public bool isReversed;
     public bool isLooped = true;
     public bool PingPong = true;
@@ -39,12 +40,12 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey("right"))
         {
-            speed = 7f;
+            speed = moveSpeed;
 
         }
         if (Input.GetKey("left"))
         {
-            speed = -7f;
+            speed = -moveSpeed;
         }
 
         if (currentSeg != whereAmI)

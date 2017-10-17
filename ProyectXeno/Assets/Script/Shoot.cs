@@ -21,4 +21,13 @@ public class Shoot : MonoBehaviour {
         Destroy(gameObject, 5f);
 
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.transform.tag != "Ship")
+        {
+            Destroy(col.gameObject);
+        }
+            
+    }
 }
