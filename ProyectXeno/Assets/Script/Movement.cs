@@ -8,12 +8,16 @@ public class Movement : MonoBehaviour
     //Shooting stuff
     public GameObject Shoot;
     public Transform ShootSpawn;
+    public Transform ShootSpawnRight;
+    public Transform ShootSpawnLeft;
     private float fireDelta = 0.5F;
     private float nextFire = 1F;
     private float myTime = 0.0F;
 
 
     public PlayMode mode;
+
+    public static bool isBlueActive = false;
 
     public float moveSpeed = 10f;
     private float speed = 5f;
@@ -53,12 +57,29 @@ public class Movement : MonoBehaviour
             speed = 0f;
             whereAmI = currentSeg;
         }
+
+
+
         if (Input.GetButton ("Fire1") && myTime > nextFire)
         {
-            nextFire = myTime + fireDelta;
-            Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
-            nextFire = nextFire - myTime;
-            myTime = 0.0F;
+            if (!isBlueActive)
+            {
+                nextFire = myTime + fireDelta;
+                Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+                nextFire = nextFire - myTime;
+                myTime = 0.0F;
+            }
+            else
+            {
+                nextFire = myTime + fireDelta;
+                Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+                Instantiate(Shoot, ShootSpawnRight.position, Quaternion.identity);
+                Instantiate(Shoot, ShootSpawnLeft.position, Quaternion.identity);
+                nextFire = nextFire - myTime;
+                myTime = 0.0f;
+
+            }
+          
         }
 
     }
