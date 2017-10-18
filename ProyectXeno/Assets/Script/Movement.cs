@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
             speed = -moveSpeed;
         }
 
-        if (currentSeg != whereAmI)
+        if (currentSeg != whereAmI && !Input.GetKey("left") && !Input.GetKey ("right"))
         {
             speed = 0f;
             whereAmI = currentSeg;
