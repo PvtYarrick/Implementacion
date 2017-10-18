@@ -22,9 +22,9 @@ public class Shoot : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
-        if (col.transform.tag != "Ship")
+        if (col.transform.tag == "Enemy")
         {
             Destroy(col.gameObject);
         }

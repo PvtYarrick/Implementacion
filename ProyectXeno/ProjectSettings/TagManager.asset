@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ship
   - Shielded
+  - Enemy
   layers:
   - Default
   - TransparentFX
