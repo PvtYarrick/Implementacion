@@ -23,20 +23,25 @@ public class EnemyController : MonoBehaviour {
         Destroy(gameObject, 5f);
     }
 
-    private void OnTriggerEnter(Collider col)
+    public void OnTriggerEnter(Collider ShipCol)
     {
-        if(col.transform.tag == "Ship")
+        //Debug.Log(ShipCol);
+        //Debug.Log(Upgrade_Shield);
+        //Debug.Log(ShipCol.gameObject);
+
+        if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false)
         {
-            Destroy(col.gameObject);
-        }else if (col.transform.tag == "Shielded")
+
+            Destroy(ShipCol.gameObject);
+        }
+        else if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == true)
         {
             Destroy(gameObject);
+            YellowPowerup._shielded = false;
         }
-
-
-    
-            
     }
+
+
 
 
 }
