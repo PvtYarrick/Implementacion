@@ -11,7 +11,7 @@ public class YellowPowerup : MonoBehaviour {
         if (col.transform.tag == "Ship")
         {
             _shielded = true;
-            Debug.Log("Me pongo a true");
+            //Debug.Log("Me pongo a true");
         }
     }
 }

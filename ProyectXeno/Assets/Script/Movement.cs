@@ -32,6 +32,16 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private int whereAmI = 0;
 
+
+    Renderer rend;
+
+
+    private void Start()
+    {
+        rend = GetComponent<Renderer>();
+        //rend.material.shader = Shader.Find("Specular");
+    }
+
     private void Update()
     {
         myTime = myTime + Time.deltaTime;
@@ -82,6 +92,14 @@ public class Movement : MonoBehaviour
           
         }
 
+        if (YellowPowerup._shielded == true)
+        {
+            rend.material.SetColor("_Color", Color.yellow);
+        }
+        else
+        {
+            rend.material.SetColor("_Color", Color.white);
+        }
     }
     private void Play(bool forward = true)
     {
