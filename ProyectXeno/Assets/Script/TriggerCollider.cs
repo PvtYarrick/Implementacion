@@ -16,14 +16,11 @@ public class TriggerCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
     }
     void OnTriggerEnter(Collider col)
-    { if (col.transform.tag == "Ship" || col.transform.tag == "Shielded")
-        {
+    { 
+        
 
-            Levels.getInstance().IveBeenTriggered();
-        }
+            
     }
 }

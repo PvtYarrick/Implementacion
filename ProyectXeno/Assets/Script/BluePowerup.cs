@@ -11,7 +11,7 @@ public class BluePowerup : MonoBehaviour {
         playerRef = GetComponent<Movement>();
     }*/
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKey("e"))
         {
@@ -19,7 +19,7 @@ public class BluePowerup : MonoBehaviour {
             Movement.isBlueActive = !Movement.isBlueActive;
         }
            
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,7 +27,7 @@ public class BluePowerup : MonoBehaviour {
 
         if (other.transform.tag == "Ship")
         {
-            Debug.Log("Im in");
+            //Debug.Log("Im in");
             Movement.isBlueActive = true;
         }
     }
@@ -38,7 +38,7 @@ public class BluePowerup : MonoBehaviour {
         
         if (other.transform.tag == "Ship")
         {
-            Debug.Log("Im out");
+            //Debug.Log("Im out");
             Movement.isBlueActive = false;
         }
     }

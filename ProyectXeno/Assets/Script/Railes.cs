@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Collections;
 
 
@@ -10,7 +10,7 @@ public enum PlayMode
     Catmull,
 }
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 
 public class Railes : MonoBehaviour
 {
@@ -98,13 +98,13 @@ public class Railes : MonoBehaviour
 
 
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         for (int i = 0; i < nodes.Length - 1; i++)
         {
             Handles.DrawDottedLine(nodes[i].position, nodes[i + 1].position, 3.0f);
         }
-    }
+    }*/
 
 }
 

@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 33562721172910530}
   - component: {fileID: 65868536341475760}
   - component: {fileID: 23504247958030224}
+  - component: {fileID: 114499741697879780}
   m_Layer: 0
   m_Name: Carril
   m_TagString: Untagged
@@ -240,7 +241,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!54 &54632438078546214
 Rigidbody:
@@ -304,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4106994bc436c4caf58ffd297e09a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tubeSpeed: 0.8
 --- !u!114 &114497122200751472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,5 +314,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10f215bb252f5f446b7e576019f476b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114499741697879780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300180417128204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24871d53a023de4cbac4727fec8ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
