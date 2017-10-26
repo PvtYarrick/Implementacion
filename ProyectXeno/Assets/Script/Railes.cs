@@ -41,6 +41,15 @@ public class Railes : MonoBehaviour
 
         return Vector3.Lerp(p1, p2, ratio);
     }
+    
+    public Quaternion Orientation(int seg, float ratio)
+    {
+        Quaternion q1 = nodes[seg].rotation;
+        Quaternion q2 = nodes[seg+1].rotation;
+
+        return Quaternion.Lerp(q1, q2, ratio);
+    }
+
     public Vector3 CatmullPosition(int seg, float ratio)
     {
         Vector3 p1, p2, p3, p4;

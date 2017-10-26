@@ -167,6 +167,7 @@ public class Movement : MonoBehaviour
         }
 
         transform.position = rail.PositionOnRail(currentSeg, transition, mode);
+        transform.rotation = rail.Orientation(currentSeg, transition);
         //speed = 0f;
 
     }
