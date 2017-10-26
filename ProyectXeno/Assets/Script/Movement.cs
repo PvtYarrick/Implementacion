@@ -32,16 +32,16 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private int whereAmI = 0;
 
-    /*Renderer rend;
+    public Renderer rend;
 
     public Material mat_ship;
-    public Material mat_shielded;*/
+    public Material mat_shielded;
 
 
     private void Start()
     {
-        //rend = GetComponent<Renderer>();
-        //rend.material = mat_ship;
+        rend = GetComponentInChildren<Renderer>();
+        rend.material = mat_ship;
 
     }
 
@@ -95,7 +95,7 @@ public class Movement : MonoBehaviour
           
         }
 
-        /*if (YellowPowerup._shielded == true)
+        if (YellowPowerup._shielded == true)
         {
             //Debug.Log ("I'm yellow and shielded");
             rend.material = mat_shielded;
@@ -103,7 +103,7 @@ public class Movement : MonoBehaviour
         else
         {
             rend.material = mat_ship;
-        }*/
+        }
     }
     private void Play(bool forward = true)
     {

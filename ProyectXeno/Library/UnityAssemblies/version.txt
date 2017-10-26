@@ -57,3 +57,19 @@ C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/UnitySpatia
 C:/Users/Raquel/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@0.0.16/UnityEngine.Advertisements.dll
 C:/Users/Raquel/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@0.0.17/UnityEngine.Analytics.dll
 C:/Users/Raquel/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.18/UnityEngine.Purchasing.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/UIAutomation/Editor/UnityEditor.UIAutomation.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/Managed/UnityEditor.Graphs.dll
+C:/Program Files/Unity 2017.2.0b10/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
+C:/Users/Raquel/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@0.0.16/Editor/UnityEditor.Advertisements.dll
+C:/Users/Raquel/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@0.0.17/Editor/UnityEditor.Analytics.dll
+C:/Users/Raquel/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.18/Editor/UnityEditor.Purchasing.dll
