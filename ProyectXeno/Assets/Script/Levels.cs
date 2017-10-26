@@ -5,7 +5,7 @@ using UnityEngine;
 public class Levels : MonoBehaviour {
 
     
-    public static Transform currentPos;
+    public static Vector3 currentPos;
 
     private int placedTubes;
 
@@ -25,8 +25,8 @@ public class Levels : MonoBehaviour {
 
     private void Start()
     {
-        currentPos = GetComponent<Transform>();
-        currentPos.position = new Vector3(0,0,48.5f);
+        currentPos = GetComponent<Transform>().position;
+        currentPos = new Vector3(0,0,48.5f);
     }
 
 
@@ -54,10 +54,10 @@ public class Levels : MonoBehaviour {
     {
         if (Tube.tubeSpeed == 0.8f)
         {
-            currentPos.position = new Vector3(0, 0, 48.5f);
+            currentPos = new Vector3(0, 0, 48.5f);
         }else if (Tube.tubeSpeed == 1.5f)
         {
-            currentPos.position = new Vector3(0, 0, 52.4f);
+            currentPos = new Vector3(0, 0, 52.4f);
         }
     }
 
@@ -72,7 +72,7 @@ public class Levels : MonoBehaviour {
     //Cuando toca el trigger, TriggerCollider accede a esta función
     public void IveBeenTriggered() {
         //for (int i = 0; i < 6; i++) {
-        Debug.Log("Spawn!");
+        //Debug.Log("Spawn!");
         Vector3 pos = transform.position;
         if (lastInstantiated != null)
             pos = lastInstantiated.transform.position +  Vector3.forward * length;

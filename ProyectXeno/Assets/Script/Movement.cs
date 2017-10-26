@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
+    
     public Railes rail;
+
+    
 
     //Shooting stuff
     public GameObject Shoot;
@@ -91,6 +94,8 @@ public class Movement : MonoBehaviour
             }
           
         }
+
+        
 
         if (YellowPowerup._shielded == true)
         {
