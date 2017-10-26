@@ -32,14 +32,17 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private int whereAmI = 0;
 
+    /*Renderer rend;
 
-    Renderer rend;
+    public Material mat_ship;
+    public Material mat_shielded;*/
 
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();
-        //rend.material.shader = Shader.Find("Specular");
+        //rend = GetComponent<Renderer>();
+        //rend.material = mat_ship;
+
     }
 
     private void Update()
@@ -92,14 +95,15 @@ public class Movement : MonoBehaviour
           
         }
 
-        if (YellowPowerup._shielded == true)
+        /*if (YellowPowerup._shielded == true)
         {
-            rend.material.SetColor("_Color", Color.yellow);
+            //Debug.Log ("I'm yellow and shielded");
+            rend.material = mat_shielded;
         }
         else
         {
-            rend.material.SetColor("_Color", Color.white);
-        }
+            rend.material = mat_ship;
+        }*/
     }
     private void Play(bool forward = true)
     {

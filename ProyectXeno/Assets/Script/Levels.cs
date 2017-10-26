@@ -72,11 +72,11 @@ public class Levels : MonoBehaviour {
     //Cuando toca el trigger, TriggerCollider accede a esta función
     public void IveBeenTriggered() {
         //for (int i = 0; i < 6; i++) {
-        Debug.Log("Spawn!");
+        //Debug.Log("Spawn!");
         Vector3 pos = transform.position;
         if (lastInstantiated != null)
             pos = lastInstantiated.transform.position +  Vector3.forward * length;
-        lastInstantiated = Instantiate(niveles[Random.Range(0,4)], pos, Quaternion.identity);
+        lastInstantiated = Instantiate(niveles[Random.Range(0,5)], pos, Quaternion.identity);
         //print(Random.Range(1, 10));
             //PlaceForTheNextLevel += Vector3.forward * 40;
             /*GameObject segundoNivel = Instantiate(niveles[i + 1], transform.position, Quaternion.identity);
