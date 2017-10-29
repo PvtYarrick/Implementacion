@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
 
 
 
-        if (Input.GetButton ("Fire1") && myTime > nextFire)
+        if (Input.GetKey ("up") && myTime > nextFire)
         {
             if (!isBlueActive)
             {

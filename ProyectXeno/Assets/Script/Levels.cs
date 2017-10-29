@@ -52,12 +52,14 @@ public class Levels : MonoBehaviour {
 
     private void Update()
     {
-        if (Tube.tubeSpeed == 0.8f)
+        if (Tube.tubeSpeed == 1.5f)
         {
+            Score.score += Score.score_add;
             currentPos.position = new Vector3(0, 0, 48.5f);
-        }else if (Tube.tubeSpeed == 1.5f)
+        }else if (Tube.tubeSpeed == 2.3f)
         {
             currentPos.position = new Vector3(0, 0, 52.4f);
+            Score.score += Score.score_add * 2;
         }
     }
 
@@ -76,7 +78,7 @@ public class Levels : MonoBehaviour {
         Vector3 pos = transform.position;
         if (lastInstantiated != null)
             pos = lastInstantiated.transform.position +  Vector3.forward * length;
-        lastInstantiated = Instantiate(niveles[Random.Range(0,5)], pos, Quaternion.identity);
+            lastInstantiated = Instantiate(niveles[Random.Range(0,5)], pos, Quaternion.identity);
         //print(Random.Range(1, 10));
             //PlaceForTheNextLevel += Vector3.forward * 40;
             /*GameObject segundoNivel = Instantiate(niveles[i + 1], transform.position, Quaternion.identity);

@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour {
         //Debug.Log(ShipCol);
         //Debug.Log(Upgrade_Shield);
         //Debug.Log(ShipCol.gameObject);
+        Debug.Log("Destroyed");
 
         if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false)
         {
