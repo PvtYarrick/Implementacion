@@ -27,6 +27,7 @@ public class Levels : MonoBehaviour {
     {
         currentPos = GetComponent<Transform>();
         currentPos.position = new Vector3(0,0,48.5f);
+        
     }
 
 
@@ -56,10 +57,11 @@ public class Levels : MonoBehaviour {
         {
             Score.score += Score.score_add;
             currentPos.position = new Vector3(0, 0, 48.5f);
-        }else if (Tube.tubeSpeed == 2.3f)
+
+        }else if (Tube.tubeSpeed == 2.5f)
         {
             currentPos.position = new Vector3(0, 0, 52.4f);
-            Score.score += Score.score_add * 2;
+            Score.score += Score.score_add * 50;
         }
     }
 

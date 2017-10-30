@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     public static Text score_text;
-    public static int score = 0;
-    public static int score_add = 1;
+    public static uint score = 0;
+    public static uint score_add = 1;
 
 	// Use this for initialization
 	void Start () {
