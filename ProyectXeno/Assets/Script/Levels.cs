@@ -17,7 +17,7 @@ public class Levels : MonoBehaviour {
     private int i;
     Vector3 PlaceForTheNextLevel;
 
-    
+    public static bool dead_ship;
 
 
     private static Levels _instance = null;
@@ -27,6 +27,7 @@ public class Levels : MonoBehaviour {
     {
         currentPos = GetComponent<Transform>();
         currentPos.position = new Vector3(0,0,48.5f);
+        dead_ship = false;
         
     }
 
@@ -38,7 +39,6 @@ public class Levels : MonoBehaviour {
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else if (_instance != this)
         {
@@ -53,16 +53,20 @@ public class Levels : MonoBehaviour {
 
     private void Update()
     {
-        if (Tube.tubeSpeed == 1.5f)
+        if (Tube.tubeSpeed == 1.5f && dead_ship == false)
         {
             Score.score += Score.score_add;
             currentPos.position = new Vector3(0, 0, 48.5f);
 
-        }else if (Tube.tubeSpeed == 2.5f)
+        }else if (Tube.tubeSpeed == 2.5f && dead_ship == false)
         {
             currentPos.position = new Vector3(0, 0, 52.4f);
             Score.score += Score.score_add * 50;
+        }else if (Tube.tubeSpeed == 1.5f && dead_ship == true)
+        {
+            Score.score += 0;
         }
+
     }
 
     public static Levels getInstance() {

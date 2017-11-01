@@ -9,21 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1882365076186370}
+  m_RootGameObject: {fileID: 1615191926400966}
   m_IsPrefabParent: 1
---- !u!1 &1882365076186370
+--- !u!1 &1615191926400966
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4903042343254514}
-  - component: {fileID: 33643159128959796}
-  - component: {fileID: 65291801722001378}
-  - component: {fileID: 23950006671630558}
-  - component: {fileID: 54414780134598800}
-  - component: {fileID: 114478354132753162}
+  - component: {fileID: 4680735834864644}
+  - component: {fileID: 33898789241459572}
+  - component: {fileID: 23073653311957258}
+  - component: {fileID: 114340724899739830}
+  - component: {fileID: 65014555474935808}
   m_Layer: 0
   m_Name: Shoot
   m_TagString: Untagged
@@ -31,25 +30,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4903042343254514
+--- !u!4 &4680735834864644
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882365076186370}
+  m_GameObject: {fileID: 1615191926400966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.57811, y: 53.971832, z: 84.26771}
-  m_LocalScale: {x: 0.50527537, y: 0.45847318, z: 1.7816497}
+  m_LocalPosition: {x: -168.6867, y: 179.06969, z: -470.89987}
+  m_LocalScale: {x: 2.805394, y: 3.1364224, z: 2.8053942}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23950006671630558
+--- !u!23 &23073653311957258
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882365076186370}
+  m_GameObject: {fileID: 1615191926400966}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a4f36880e37dd164cb1e4b0d759f29c7, type: 2}
+  - {fileID: 2100000, guid: 296a8fb0d9702a4488651e2cc0f7c808, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,49 +77,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33643159128959796
+--- !u!33 &33898789241459572
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882365076186370}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54414780134598800
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882365076186370}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 118
-  m_CollisionDetection: 1
---- !u!65 &65291801722001378
+  m_GameObject: {fileID: 1615191926400966}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65014555474935808
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882365076186370}
+  m_GameObject: {fileID: 1615191926400966}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.97, y: 0.64, z: 3.66}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114478354132753162
+--- !u!114 &114340724899739830
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882365076186370}
+  m_GameObject: {fileID: 1615191926400966}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a21c4d8f9dabd647be0a1d6a5140f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSpeed: 1
+  shootSpeed: 3

@@ -7,12 +7,13 @@ public class EnemyController : MonoBehaviour {
     public float enemySpeed;
     private Vector3 speed;
     //private GameObject enemigo;
+    //private ParticleSystem _enemykilledparticles;
 
     void Start()
     {
 
         speed = Vector3.back * enemySpeed;
-        //enemigo = 
+        //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -25,18 +26,18 @@ public class EnemyController : MonoBehaviour {
 
     public void OnTriggerEnter(Collider ShipCol)
     {
-        //Debug.Log(ShipCol);
-        //Debug.Log(Upgrade_Shield);
-        //Debug.Log(ShipCol.gameObject);
         Debug.Log("Destroyed");
 
         if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false)
         {
 
             Destroy(ShipCol.gameObject);
+            Levels.dead_ship = true;
+
         }
         else if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == true)
         {
+            //_enemykilledparticles.Play();
             Destroy(gameObject);
             YellowPowerup._shielded = false;
         }

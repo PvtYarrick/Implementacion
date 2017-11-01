@@ -11,7 +11,6 @@ public class Shoot : MonoBehaviour {
     void Start () {
 
         shootspeed = Vector3.forward * shootSpeed;
-       
     }
 	
 	// Update is called once per frame
@@ -27,6 +26,7 @@ public class Shoot : MonoBehaviour {
         if (col.transform.tag == "Enemy")
         {
             Destroy(col.gameObject);
+            Score.score += Score.score_add * 15;
         }
             
     }

@@ -7,8 +7,8 @@ public class SpeedParticles : MonoBehaviour {
     private ParticleSystem _speedparticles;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         _speedparticles = GetComponentInChildren<ParticleSystem>();
 	}
@@ -19,6 +19,7 @@ public class SpeedParticles : MonoBehaviour {
         if (SpeedPowerup.speeding == true)
         {
             _speedparticles.Play();
+
 
         }
         else
