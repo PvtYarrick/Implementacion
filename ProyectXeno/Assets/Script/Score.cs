@@ -19,8 +19,6 @@ public class Score : MonoBehaviour {
         void Start () {
 
         score_text = GetComponentInChildren<Text>();
-        panel_1.enabled = false;
-        panel_2.enabled = false;
         end_text.gameObject.SetActive(false);
         score = 0;
     }
