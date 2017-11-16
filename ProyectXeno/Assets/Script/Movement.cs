@@ -42,7 +42,6 @@ public class Movement : MonoBehaviour
     {
         rend = GetComponentInChildren<Renderer>();
         rend.material = mat_ship;
-
     }
 
     private void Update()
@@ -65,46 +64,45 @@ public class Movement : MonoBehaviour
             speed = -moveSpeed;
         }
 
-        if (currentSeg != whereAmI /*&& !Input.GetKey("left") && !Input.GetKey("right")*/)
+        if (currentSeg != whereAmI)
         {
             speed = 0f;
             whereAmI = currentSeg;
         }
 
-
-
-        if (Input.GetKey ("up") && myTime > nextFire)
+        if (Input.anyKey)
         {
-            if (!isBlueActive)
+
+            if (Input.GetKey("up") && myTime > nextFire)
             {
-                nextFire = myTime + fireDelta;
-                Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
-                nextFire = nextFire - myTime;
-                myTime = 0.0F;
-            }
-            else
-            {
-                nextFire = myTime + fireDelta;
-                Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
-                Instantiate(Shoot, ShootSpawnRight.position, Quaternion.identity);
-                Instantiate(Shoot, ShootSpawnLeft.position, Quaternion.identity);
-                nextFire = nextFire - myTime;
-                myTime = 0.0f;
+                if (!isBlueActive)
+                {
+                    nextFire = myTime + fireDelta;
+                    Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+                    nextFire = nextFire - myTime;
+                    myTime = 0.0F;
+                }
+                else
+                {
+                    nextFire = myTime + fireDelta;
+                    Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+                    Instantiate(Shoot, ShootSpawnRight.position, Quaternion.identity);
+                    Instantiate(Shoot, ShootSpawnLeft.position, Quaternion.identity);
+                    nextFire = nextFire - myTime;
+                    myTime = 0.0f;
+
+                }
 
             }
-          
         }
-
         if (YellowPowerup._shielded == true)
         {
-            //Debug.Log ("I'm yellow and shielded");
             rend.material = mat_shielded;
-        }
-        else
-        {
+        }else{
             rend.material = mat_ship;
         }
-    }
+        }
+
     private void Play(bool forward = true)
     {
         float m = (rail.nodes[currentSeg + 1].position - rail.nodes[currentSeg].position).magnitude;

@@ -6,9 +6,7 @@ public class Levels : MonoBehaviour {
 
     
     public static Transform currentPos;
-
     private int placedTubes;
-
     //public List<int> order;
     //Indica el orden en el que se van a instanciar los planos que pongamos en niveles
     public List<GameObject> niveles;
@@ -18,6 +16,7 @@ public class Levels : MonoBehaviour {
     Vector3 PlaceForTheNextLevel;
 
     public static bool dead_ship;
+    private int score_count = 0;
 
 
     private static Levels _instance = null;
@@ -27,15 +26,12 @@ public class Levels : MonoBehaviour {
     {
         currentPos = GetComponent<Transform>();
         currentPos.position = new Vector3(0,0,48.5f);
-        dead_ship = false;
         
     }
-
 
     void Awake() {
 
         //PlaceForTheNextLevel = transform.position + Vector3.forward * 10;
-
         if (_instance == null)
         {
             _instance = this;
@@ -53,21 +49,29 @@ public class Levels : MonoBehaviour {
 
     private void Update()
     {
-        if (Tube.tubeSpeed == 1.5f && dead_ship == false)
+        score_count++;
+        if (!dead_ship)
         {
-            Score.score += Score.score_add;
-            currentPos.position = new Vector3(0, 0, 48.5f);
+            if (Tube.tubeSpeed == 1.5f)
+            {
+                if (score_count == 5)
+                {
+                    Score.score += Score.score_add;
+                    score_count = 0;
+                }
+                currentPos.position = new Vector3(0, 0, 48.5f);
 
-        }else if (Tube.tubeSpeed == 2.5f && dead_ship == false)
-        {
-            currentPos.position = new Vector3(0, 0, 52.4f);
-            Score.score += Score.score_add * 50;
-        }else if (Tube.tubeSpeed == 1.5f && dead_ship == true)
-        {
-            Score.score += 0;
+            }
+            else if (Tube.tubeSpeed == 2.5f)
+            {
+
+                currentPos.position = new Vector3(0, 0, 52.4f);
+                Score.score += Score.score_add * 2;
+                score_count = 0;
+            }
         }
-
     }
+
 
     public static Levels getInstance() {
         return _instance;
@@ -77,7 +81,6 @@ public class Levels : MonoBehaviour {
     [SerializeField]
     float length = 18;
 
-    //Cuando toca el trigger, TriggerCollider accede a esta función
     public void IveBeenTriggered() {
         //for (int i = 0; i < 6; i++) {
         //Debug.Log("Spawn!");
@@ -92,9 +95,7 @@ public class Levels : MonoBehaviour {
         //Destroy(_nivelactual);
         //_nivelactual = _siguientenivel;
         //i++;
-            
-           // Debug.Log ("Tubo creado");
-       // }
+
        
     }
 

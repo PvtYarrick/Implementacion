@@ -39,6 +39,7 @@ public class Score : MonoBehaviour {
             {
                 end_text.gameObject.SetActive(false);
                 SceneManager.LoadScene("MainScene");
+                Levels.dead_ship = false;
 
             }
             else if (Input.GetKeyDown(KeyCode.N))

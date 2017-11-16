@@ -13,7 +13,6 @@ public class SpeedPowerup : MonoBehaviour {
 
         if (other.transform.tag == "Ship")
         {
-            //Debug.Log("SPEEEEEEEEEEEEEED");
             Tube.tubeSpeed = 2.5f;
             speeding = true;
         }
@@ -23,9 +22,7 @@ public class SpeedPowerup : MonoBehaviour {
     {
 
 
-        if (other.transform.tag == "Ship")
-        {
-            //Debug.Log("You cant run from the past");
+        if (other.transform.tag == "Ship"){ 
             Tube.tubeSpeed = 1.5f;
             speeding = false;
         }

@@ -8,9 +8,11 @@ public class YellowPowerup : MonoBehaviour {
 	
     void OnTriggerEnter(Collider col)
     {
+
         if (col.transform.tag == "Ship")
         {
             _shielded = true;
+            
         }
     }
 }

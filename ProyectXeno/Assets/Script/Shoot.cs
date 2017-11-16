@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour {
 	void Update () {
 
         transform.Translate(shootspeed);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 0.5f);
 
     }
 
@@ -25,9 +25,14 @@ public class Shoot : MonoBehaviour {
     {
         if (col.transform.tag == "Enemy")
         {
-            Destroy(col.gameObject);
-            Score.score += Score.score_add * 15;
+            EnemyController obj = col.gameObject.GetComponent<EnemyController>();
+            obj.hit(1);
+            if (obj.vida() <= 0)
+            {
+                Destroy(col.gameObject);
+                Debug.Log(Score.score);
+                Score.score = Score.score + obj.enemyScore();
+            }
         }
-            
-    }
+}
 }
