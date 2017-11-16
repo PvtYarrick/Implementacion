@@ -32,14 +32,16 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private int whereAmI = 0;
 
+    public Renderer rend;
 
-    Renderer rend;
+    public Material mat_ship;
+    public Material mat_shielded;
 
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();
-        //rend.material.shader = Shader.Find("Specular");
+        rend = GetComponentInChildren<Renderer>();
+        rend.material = mat_ship;
     }
 
     private void Update()
@@ -62,45 +64,45 @@ public class Movement : MonoBehaviour
             speed = -moveSpeed;
         }
 
-        if (currentSeg != whereAmI /*&& !Input.GetKey("left") && !Input.GetKey("right")*/)
+        if (currentSeg != whereAmI)
         {
             speed = 0f;
             whereAmI = currentSeg;
         }
 
-
-
-        if (Input.GetButton ("Fire1") && myTime > nextFire)
+        if (Input.anyKey)
         {
-            if (!isBlueActive)
+
+            if (Input.GetKey("up") && myTime > nextFire)
             {
-                nextFire = myTime + fireDelta;
-                Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
-                nextFire = nextFire - myTime;
-                myTime = 0.0F;
-            }
-            else
-            {
-                nextFire = myTime + fireDelta;
-                Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
-                Instantiate(Shoot, ShootSpawnRight.position, Quaternion.identity);
-                Instantiate(Shoot, ShootSpawnLeft.position, Quaternion.identity);
-                nextFire = nextFire - myTime;
-                myTime = 0.0f;
+                if (!isBlueActive)
+                {
+                    nextFire = myTime + fireDelta;
+                    Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+                    nextFire = nextFire - myTime;
+                    myTime = 0.0F;
+                }
+                else
+                {
+                    nextFire = myTime + fireDelta;
+                    Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
+                    Instantiate(Shoot, ShootSpawnRight.position, Quaternion.identity);
+                    Instantiate(Shoot, ShootSpawnLeft.position, Quaternion.identity);
+                    nextFire = nextFire - myTime;
+                    myTime = 0.0f;
+
+                }
 
             }
-          
         }
-
         if (YellowPowerup._shielded == true)
         {
-            rend.material.SetColor("_Color", Color.yellow);
+            rend.material = mat_shielded;
+        }else{
+            rend.material = mat_ship;
         }
-        else
-        {
-            rend.material.SetColor("_Color", Color.white);
         }
-    }
+
     private void Play(bool forward = true)
     {
         float m = (rail.nodes[currentSeg + 1].position - rail.nodes[currentSeg].position).magnitude;

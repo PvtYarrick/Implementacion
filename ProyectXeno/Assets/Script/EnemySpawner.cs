@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
-//using UnityEditor;
+using System.Collections.Generic;
 
 
-//[ExecuteInEditMode]
 public class EnemySpawner : MonoBehaviour
 {
 
-    public GameObject basicEnemy;
+    public List<GameObject> Enemies;
+    //public List<GameObject> enemies;
     public Transform[] startPos;
 
 
 
-    public float newEnemy = 300f;
+    public float newEnemy = 80f;
     [SerializeField]
     private float lastEnemy = 0f;
 
@@ -25,8 +25,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-
-        //SpawnEnemy();
         if(lastEnemy >= newEnemy)
         {
             SpawnEnemy();
@@ -36,27 +34,11 @@ public class EnemySpawner : MonoBehaviour
             lastEnemy = lastEnemy + Random.Range(1,5);
         }
 
-        /*if (Input.GetKey("e"))
-        {
-            SpawnEnemy();
-        }*/
-            
-
     }
 
 
     private void SpawnEnemy()
     {
-        Instantiate(basicEnemy, startPos[Random.Range(0,6)].position, Quaternion.identity);
+        Instantiate(Enemies[Random.Range(0,2)], startPos[Random.Range(0,6)].position, Quaternion.identity);
     }
-
-
-
-
-
-
-
-
-
-
 }

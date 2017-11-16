@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class SpeedPowerup : MonoBehaviour {
 
+    public static bool speeding = false;
+    public Animator Panels;
+
+    void Start()
+    {
+        Panels = GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
 
 
         if (other.transform.tag == "Ship")
         {
-            Debug.Log("SPEEEEEEEEEEEEEED");
-            Tube.tubeSpeed = 1.5f;
+            Tube.tubeSpeed = 2.5f;
+            speeding = true;
+            Panels.SetBool("speeding", true);
         }
     }
 
@@ -19,10 +28,10 @@ public class SpeedPowerup : MonoBehaviour {
     {
 
 
-        if (other.transform.tag == "Ship")
-        {
-            Debug.Log("You cant run from the past");
-            Tube.tubeSpeed = 0.8f;
+        if (other.transform.tag == "Ship"){ 
+            Tube.tubeSpeed = 1.5f;
+            speeding = false;
+            Panels.SetBool("speeding", false);
         }
     }
 }

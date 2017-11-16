@@ -6,42 +6,53 @@ public class EnemyController : MonoBehaviour {
 
     public float enemySpeed;
     private Vector3 speed;
-    //private GameObject enemigo;
+    protected uint score_enemy = 50;
+    protected int enemyLife;
+    public static int shield_count = 3;
 
-    void Start()
+    protected virtual void Start()
     {
 
         speed = Vector3.back * enemySpeed;
-        //enemigo = 
+        //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
+        
+        Destroy(gameObject, 6f);
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         transform.Translate(speed);
-
-        Destroy(gameObject, 5f);
     }
 
-    public void OnTriggerEnter(Collider ShipCol)
+    protected virtual void OnTriggerEnter(Collider ShipCol)
     {
-        //Debug.Log(ShipCol);
-        //Debug.Log(Upgrade_Shield);
-        //Debug.Log(ShipCol.gameObject);
-
-        if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false)
+        if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false && enemyLife > 0)
         {
 
             Destroy(ShipCol.gameObject);
+            Levels.dead_ship = true;
+
         }
         else if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == true)
         {
-            Destroy(gameObject);
+            enemyLife = 0;
             YellowPowerup._shielded = false;
+            Score.score = Score.score_add + score_enemy;
+            Destroy(gameObject);
         }
     }
 
 
-
-
+    public int vida()
+    {
+        return enemyLife;
+    }
+    public uint enemyScore ()
+    {
+        return score_enemy;
+    }
+    public void hit(int dmg) {
+        enemyLife -= dmg;
+    }
 }

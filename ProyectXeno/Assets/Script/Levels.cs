@@ -6,9 +6,7 @@ public class Levels : MonoBehaviour {
 
     
     public static Transform currentPos;
-
     private int placedTubes;
-
     //public List<int> order;
     //Indica el orden en el que se van a instanciar los planos que pongamos en niveles
     public List<GameObject> niveles;
@@ -17,7 +15,8 @@ public class Levels : MonoBehaviour {
     private int i;
     Vector3 PlaceForTheNextLevel;
 
-    
+    public static bool dead_ship;
+    private int score_count = 0;
 
 
     private static Levels _instance = null;
@@ -27,17 +26,15 @@ public class Levels : MonoBehaviour {
     {
         currentPos = GetComponent<Transform>();
         currentPos.position = new Vector3(0,0,48.5f);
+        
     }
-
 
     void Awake() {
 
         //PlaceForTheNextLevel = transform.position + Vector3.forward * 10;
-
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else if (_instance != this)
         {
@@ -52,14 +49,29 @@ public class Levels : MonoBehaviour {
 
     private void Update()
     {
-        if (Tube.tubeSpeed == 0.8f)
+        score_count++;
+        if (!dead_ship)
         {
-            currentPos.position = new Vector3(0, 0, 48.5f);
-        }else if (Tube.tubeSpeed == 1.5f)
-        {
-            currentPos.position = new Vector3(0, 0, 52.4f);
+            if (Tube.tubeSpeed == 1.5f)
+            {
+                if (score_count == 5)
+                {
+                    Score.score += Score.score_add;
+                    score_count = 0;
+                }
+                currentPos.position = new Vector3(0, 0, 48.5f);
+
+            }
+            else if (Tube.tubeSpeed == 2.5f)
+            {
+
+                currentPos.position = new Vector3(0, 0, 52.4f);
+                Score.score += Score.score_add * 2;
+                score_count = 0;
+            }
         }
     }
+
 
     public static Levels getInstance() {
         return _instance;
@@ -69,14 +81,13 @@ public class Levels : MonoBehaviour {
     [SerializeField]
     float length = 18;
 
-    //Cuando toca el trigger, TriggerCollider accede a esta función
     public void IveBeenTriggered() {
         //for (int i = 0; i < 6; i++) {
-        Debug.Log("Spawn!");
+        //Debug.Log("Spawn!");
         Vector3 pos = transform.position;
         if (lastInstantiated != null)
             pos = lastInstantiated.transform.position +  Vector3.forward * length;
-        lastInstantiated = Instantiate(niveles[Random.Range(0,4)], pos, Quaternion.identity);
+            lastInstantiated = Instantiate(niveles[Random.Range(0,5)], pos, Quaternion.identity);
         //print(Random.Range(1, 10));
             //PlaceForTheNextLevel += Vector3.forward * 40;
             /*GameObject segundoNivel = Instantiate(niveles[i + 1], transform.position, Quaternion.identity);
@@ -84,9 +95,7 @@ public class Levels : MonoBehaviour {
         //Destroy(_nivelactual);
         //_nivelactual = _siguientenivel;
         //i++;
-            
-           // Debug.Log ("Tubo creado");
-       // }
+
        
     }
 
