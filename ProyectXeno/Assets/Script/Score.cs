@@ -29,8 +29,8 @@ public class Score : MonoBehaviour {
 	void Update () {
             score_text.text = "" + score;
         
-            panel_1.enabled = SpeedPowerup.speeding;
-            panel_2.enabled = SpeedPowerup.speeding; 
+            /*panel_1.enabled = SpeedPowerup.speeding;
+            panel_2.enabled = SpeedPowerup.speeding; */
 
         if (Levels.dead_ship == true)
         {

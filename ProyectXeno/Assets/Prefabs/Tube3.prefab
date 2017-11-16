@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 65868536341475760}
   - component: {fileID: 23504247958030224}
   - component: {fileID: 114499741697879780}
+  - component: {fileID: 95534229374022166}
   m_Layer: 0
   m_Name: Carril
   m_TagString: Untagged
@@ -116,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136513154637032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -64.14753, y: 16.739967, z: 97.961586}
+  m_LocalPosition: {x: -151.27223, y: 160.77939, z: -421.5015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4135415978346174}
@@ -258,6 +259,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 29.8, z: 1}
   m_Center: {x: 0, y: 14.4, z: 0}
+--- !u!95 &95534229374022166
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300180417128204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1b9f7d8c889f7d4092e8a94dc34a7ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114082249367900312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24871d53a023de4cbac4727fec8ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panels: {fileID: 0}
 --- !u!198 &198021252831903638
 ParticleSystem:
   m_ObjectHideFlags: 1
