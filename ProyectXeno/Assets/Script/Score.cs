@@ -10,9 +10,8 @@ public class Score : MonoBehaviour {
     public static Text score_text;
     public static uint score;
     public static uint score_add = 1;
-    public Image panel_1;
-    public Image panel_2;
     public Text end_text;
+    public Animator Canvas;
 
 
         // Use this for initialization
@@ -21,14 +20,23 @@ public class Score : MonoBehaviour {
         score_text = GetComponentInChildren<Text>();
         end_text.gameObject.SetActive(false);
         score = 0;
+        Canvas = GetComponent<Animator>();
+ 
+
     }
 	
 	// Update is called once per frame
 	void Update () {
             score_text.text = "" + score;
         
-            /*panel_1.enabled = SpeedPowerup.speeding;
-            panel_2.enabled = SpeedPowerup.speeding; */
+        if (SpeedPowerup.speeding == true)
+        {
+            Canvas.SetBool("On", true);
+        }else
+        {
+            Canvas.SetBool("On", false);
+        }
+  
 
         if (Levels.dead_ship == true)
         {
@@ -45,6 +53,7 @@ public class Score : MonoBehaviour {
                 Application.Quit();
             }
         }
+
 
     }
 }

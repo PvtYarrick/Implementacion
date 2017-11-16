@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour {
     private Vector3 speed;
     protected uint score_enemy = 50;
     protected int enemyLife;
-    public static int shield_count = 3;
+  
 
     protected virtual void Start()
     {
@@ -38,8 +38,10 @@ public class EnemyController : MonoBehaviour {
         {
             enemyLife = 0;
             YellowPowerup._shielded = false;
-            Score.score = Score.score_add + score_enemy;
+            Score.score = Score.score + score_enemy;
             Destroy(gameObject);
+  
+           
         }
     }
 
@@ -55,4 +57,5 @@ public class EnemyController : MonoBehaviour {
     public void hit(int dmg) {
         enemyLife -= dmg;
     }
+
 }

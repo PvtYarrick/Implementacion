@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicEnemy : EnemyController {
 
+
     void Awake()
     {
         enemySpeed = 1f;
@@ -17,7 +18,8 @@ public class BasicEnemy : EnemyController {
 
     // Update is called once per frame
     protected override void Update() {
-        base.Update(); }
+        base.Update();
+            }
 
     protected override void OnTriggerEnter(Collider ShipCol)
     {
