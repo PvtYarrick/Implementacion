@@ -10,9 +10,8 @@ public class Score : MonoBehaviour {
     public static Text score_text;
     public static uint score;
     public static uint score_add = 1;
-    public Image panel_1;
-    public Image panel_2;
     public Text end_text;
+    public GameObject BluePowerUp;
 
 
         // Use this for initialization

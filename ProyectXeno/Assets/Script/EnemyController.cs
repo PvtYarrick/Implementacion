@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour {
         {
             enemyLife = 0;
             YellowPowerup._shielded = false;
-            Score.score = Score.score_add + score_enemy;
+            Score.score = Score.score + score_enemy;
             Destroy(gameObject);
         }
     }

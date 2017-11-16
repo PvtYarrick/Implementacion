@@ -7,7 +7,6 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public List<GameObject> Enemies;
-    //public List<GameObject> enemies;
     public Transform[] startPos;
 
 

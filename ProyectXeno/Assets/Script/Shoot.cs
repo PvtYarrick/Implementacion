@@ -30,7 +30,7 @@ public class Shoot : MonoBehaviour {
             if (obj.vida() <= 0)
             {
                 Destroy(col.gameObject);
-                Debug.Log(Score.score);
+                //Debug.Log(Score.score);
                 Score.score = Score.score + obj.enemyScore();
             }
         }

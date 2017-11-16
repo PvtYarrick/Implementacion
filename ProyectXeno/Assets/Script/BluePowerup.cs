@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class BluePowerup : MonoBehaviour {
 
-    
+    public float powerSpeed;
+    private Vector3 speed;
 
-    /*private void Start()
-    {
-        playerRef = GetComponent<Movement>();
-    }*/
 
-    /*private void Update()
+     private void Start()
     {
-        if (Input.GetKey("e"))
-        {
-            Debug.Log("e pressed");
-            Movement.isBlueActive = !Movement.isBlueActive;
-        }
-           
-    }*/
+
+        speed = Vector3.back * powerSpeed;
+        //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
+
+        Destroy(gameObject, 18f);
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        transform.Translate(speed);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +32,7 @@ public class BluePowerup : MonoBehaviour {
         {
             //Debug.Log("Im in");
             Movement.isBlueActive = true;
+            
         }
     }
 
@@ -40,6 +44,7 @@ public class BluePowerup : MonoBehaviour {
         {
             //Debug.Log("Im out");
             Movement.isBlueActive = false;
+           
         }
     }
 }
