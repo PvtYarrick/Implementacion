@@ -6,9 +6,9 @@ public class EnemyController : MonoBehaviour {
 
     public float enemySpeed;
     private Vector3 speed;
-    protected uint score_enemy = 50;
+    public uint score_enemy;
     protected int enemyLife;
-  
+    //public ParticleSystem _enemykilledparticles;
 
     protected virtual void Start()
     {
@@ -39,9 +39,11 @@ public class EnemyController : MonoBehaviour {
             enemyLife = 0;
             YellowPowerup._shielded = false;
             Score.score = Score.score + score_enemy;
+            Multiplier.isEnemyDestroyed = true;
+            Multiplier.enemy_destroyed = this; 
+            //_enemykilledparticles.transform.SetParent(null);
+            //_enemykilledparticles.Play();
             Destroy(gameObject);
-  
-           
         }
     }
 

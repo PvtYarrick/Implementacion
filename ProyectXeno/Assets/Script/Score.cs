@@ -21,7 +21,6 @@ public class Score : MonoBehaviour {
         end_text.gameObject.SetActive(false);
         score = 0;
         Canvas = GetComponent<Animator>();
- 
 
     }
 	
@@ -31,10 +30,10 @@ public class Score : MonoBehaviour {
         
         if (SpeedPowerup.speeding == true)
         {
-            Canvas.SetBool("On", true);
+           // Canvas.SetBool("On", true);
         }else
         {
-            Canvas.SetBool("On", false);
+           // Canvas.SetBool("On", false);
         }
   
 

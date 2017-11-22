@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour {
     public float shootSpeed;
     private Vector3 shootspeed;
 
+
     // Use this for initialization
     void Start () {
 
@@ -27,10 +28,13 @@ public class Shoot : MonoBehaviour {
         {
             EnemyController obj = col.gameObject.GetComponent<EnemyController>();
             obj.hit(1);
+
             if (obj.vida() <= 0)
             {
                 Destroy(col.gameObject);
                 Score.score = Score.score + obj.enemyScore();
+                Multiplier.isEnemyDestroyed = true;
+                Multiplier.enemy_destroyed = obj;
             }
         }
 }
