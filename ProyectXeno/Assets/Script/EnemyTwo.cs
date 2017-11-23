@@ -23,8 +23,8 @@ public class EnemyTwo : EnemyController {
         base.Update();
     }
 
-    protected override void OnTriggerEnter(Collider ShipCol)
+    protected override void OnCollisionEnter(Collision ShipCol)
     {
-        base.OnTriggerEnter(ShipCol);
+        base.OnCollisionEnter(ShipCol);
     }
 }

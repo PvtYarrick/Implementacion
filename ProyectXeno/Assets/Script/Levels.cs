@@ -52,7 +52,7 @@ public class Levels : MonoBehaviour {
         score_count++;
         if (!dead_ship)
         {
-            if (Tube.tubeSpeed == 1.5f)
+            if (Tube.tubeSpeed == 1f)
             {
                 if (score_count == 5)
                 {
@@ -62,7 +62,7 @@ public class Levels : MonoBehaviour {
                 currentPos.position = new Vector3(0, 0, 48.5f);
 
             }
-            else if (Tube.tubeSpeed == 2.5f)
+            else if (Tube.tubeSpeed == 2f)
             {
 
                 currentPos.position = new Vector3(0, 0, 52.4f);

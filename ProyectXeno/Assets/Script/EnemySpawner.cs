@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     public List<GameObject> Enemies;
     public Transform[] startPos;
+    private int spawnPos;
 
 
 
@@ -38,6 +39,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(Enemies[Random.Range(0,2)], startPos[Random.Range(0,6)].position, Quaternion.identity);
+        spawnPos = Random.Range(0, 7);
+        Instantiate(Enemies[Random.Range(0,2)], startPos[spawnPos].position, startPos[spawnPos].rotation);
+
+        //Debug rotation code
+        //Instantiate(Enemies[0], startPos[0].position, startPos[0].rotation);
     }
 }

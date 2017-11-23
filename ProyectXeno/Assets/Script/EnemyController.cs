@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour {
     protected virtual void Start()
     {
 
-        speed = Vector3.back * enemySpeed;
+        //GetComponent<Rigidbody>().velocity = Vector3.back * enemySpeed / Time.deltaTime;
         //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
         
         Destroy(gameObject, 6f);
@@ -22,10 +22,10 @@ public class EnemyController : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update()
     {
-        transform.Translate(speed);
+        transform.Translate(Vector3.back * enemySpeed);
     }
 
-    protected virtual void OnTriggerEnter(Collider ShipCol)
+    protected virtual void OnCollisionEnter(Collision ShipCol)
     {
         if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false && enemyLife > 0)
         {

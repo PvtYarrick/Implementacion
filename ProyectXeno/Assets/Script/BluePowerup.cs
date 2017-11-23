@@ -12,6 +12,7 @@ public class BluePowerup : MonoBehaviour {
     {
 
         speed = Vector3.back * powerSpeed;
+        
         //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
 
         Destroy(gameObject, 18f);
