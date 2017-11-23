@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour {
 
     public static Text score_text;
-    public static uint score;
+    public static uint score = 0;
     public static uint score_add = 1;
     public Text end_text;
     public Animator Canvas;
@@ -19,23 +19,14 @@ public class Score : MonoBehaviour {
 
         score_text = GetComponentInChildren<Text>();
         end_text.gameObject.SetActive(false);
-        score = 0;
         Canvas = GetComponent<Animator>();
+        score = 0;
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-            score_text.text = "" + score;
-        
-        if (SpeedPowerup.speeding == true)
-        {
-           // Canvas.SetBool("On", true);
-        }else
-        {
-           // Canvas.SetBool("On", false);
-        }
-  
+
+    // Update is called once per frame
+    void Update() {
+        score_text.text = "" + score;
 
         if (Levels.dead_ship == true)
         {

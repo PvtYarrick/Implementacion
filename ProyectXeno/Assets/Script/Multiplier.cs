@@ -27,9 +27,10 @@ public class Multiplier : MonoBehaviour {
             isEnemyDestroyed = false;
         }
         if (SpeedPowerup.speeding == true)
-        {
-            ScoreMultiplier_anim.SetTrigger("Enemy_dies");
-            ScoreMultiplier_text.text = "x2";
+            {
+                ScoreMultiplier_anim.SetTrigger("Enemy_dies");
+                ScoreMultiplier_text.text = "x2";
+
         }
 	}
 }

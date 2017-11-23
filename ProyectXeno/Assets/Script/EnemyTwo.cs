@@ -9,7 +9,8 @@ public class EnemyTwo : EnemyController {
         enemySpeed = 1f;
         score_enemy = 30;
         enemyLife = 2;
-    }
+        
+}
 
     // Use this for initialization
     protected override void Start()

@@ -9,15 +9,14 @@ public class EnemyController : MonoBehaviour {
     public uint score_enemy;
     protected int enemyLife;
     //public ParticleSystem _enemykilledparticles;
+    
 
     protected virtual void Start()
     {
-
         speed = Vector3.back * enemySpeed;
         //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
-        
         Destroy(gameObject, 6f);
-    }
+}
 
     // Update is called once per frame
     protected virtual void Update()
@@ -40,7 +39,8 @@ public class EnemyController : MonoBehaviour {
             YellowPowerup._shielded = false;
             Score.score = Score.score + score_enemy;
             Multiplier.isEnemyDestroyed = true;
-            Multiplier.enemy_destroyed = this; 
+            Multiplier.enemy_destroyed = this;
+            ActualMultiplier.MPCounter = ActualMultiplier.MPCounter + (score_enemy / 10);
             //_enemykilledparticles.transform.SetParent(null);
             //_enemykilledparticles.Play();
             Destroy(gameObject);

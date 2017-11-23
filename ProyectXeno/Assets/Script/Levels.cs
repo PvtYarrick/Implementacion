@@ -52,7 +52,7 @@ public class Levels : MonoBehaviour {
         score_count++;
         if (!dead_ship)
         {
-            if (Tube.tubeSpeed == 1.5f)
+            if (Tube.tubeSpeed == 1f)
             {
                 if (score_count == 5)
                 {
@@ -71,7 +71,6 @@ public class Levels : MonoBehaviour {
             }
         }
     }
-
 
     public static Levels getInstance() {
         return _instance;
