@@ -24,10 +24,8 @@ public class SpeedPowerup : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-
-
         if (other.transform.tag == "Ship"){ 
-            Tube.tubeSpeed = 1.5f;
+            Tube.tubeSpeed = 1f;
             speeding = false;
         }
     }

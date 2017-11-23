@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tube : MonoBehaviour {
 
-    public static float tubeSpeed = 1.5f;
+    public static float tubeSpeed = 1f;
     private static Vector3 speed;
 
     public static float posToDestroy = -50;

@@ -98,7 +98,9 @@ public class Movement : MonoBehaviour
         if (YellowPowerup._shielded == true)
         {
             rend.material = mat_shielded;
-        }else{
+
+        }
+        else{
             rend.material = mat_ship;
         }
         }
