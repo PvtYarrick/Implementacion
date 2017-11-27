@@ -56,7 +56,7 @@ public class Levels : MonoBehaviour {
             {
                 if (score_count == 5)
                 {
-                    Score.score += Score.score_add;
+                    Score.score += (Score.score_add * Multiplier._Multiplier);
                     score_count = 0;
                 }
                 currentPos.position = new Vector3(0, 0, 48.5f);
@@ -66,7 +66,7 @@ public class Levels : MonoBehaviour {
             {
 
                 currentPos.position = new Vector3(0, 0, 52.4f);
-                Score.score += Score.score_add * 2;
+                Score.score += (Score.score_add * 2 * Multiplier._Multiplier);
                 score_count = 0;
             }
         }

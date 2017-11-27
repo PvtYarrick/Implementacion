@@ -38,11 +38,12 @@ public class EnemyController : MonoBehaviour {
         {
             enemyLife = 0;
             YellowPowerup._shielded = false;
-            Score.score = Score.score + score_enemy;
+            Score.score = Score.score + (score_enemy * Multiplier._Multiplier);
             PointsAdder.isEnemyDestroyed = true;
             PointsAdder.enemy_destroyed = this;
             Multiplier.MPCounter = Multiplier.MPCounter + (score_enemy / 10);
             Destroy(gameObject);
+            Multiplier.killing_countdown = Multiplier.count;
         }
     }
 

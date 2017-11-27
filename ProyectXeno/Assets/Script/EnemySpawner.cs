@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         spawnPos = Random.Range(0, 7);
-        Instantiate(Enemies[Random.Range(0,2)], startPos[spawnPos].position, startPos[spawnPos].rotation);
+        Instantiate(Enemies[Random.Range(0,3)], startPos[spawnPos].position, startPos[spawnPos].rotation);
 
         //Debug rotation code
         //Instantiate(Enemies[0], startPos[0].position, startPos[0].rotation);

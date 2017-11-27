@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PointsAdder : MonoBehaviour {
 
-    public static Text ScoreMultiplier_text;
+    public Text ScoreMultiplier_text;
     public Animator ScoreMultiplier_anim;
     public static bool isEnemyDestroyed;
     public static EnemyController enemy_destroyed;
@@ -26,6 +26,7 @@ public class PointsAdder : MonoBehaviour {
             ScoreMultiplier_anim.SetTrigger("Enemy_dies");
             ScoreMultiplier_text.text = "+" + enemy_destroyed.score_enemy;
             isEnemyDestroyed = false;
+            
         }
         if (SpeedPowerup.speeding == true)
         {
