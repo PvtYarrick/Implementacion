@@ -39,6 +39,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(Enemies[Random.Range(0,2)], startPos[Random.Range(0,6)].position, Quaternion.identity);
+        Instantiate(Enemies[Random.Range(0, 2)], startPos[Random.Range(0, 6)].position, Quaternion.identity);
     }
 }

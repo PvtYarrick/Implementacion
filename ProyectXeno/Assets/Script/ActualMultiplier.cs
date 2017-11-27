@@ -18,7 +18,6 @@ public class ActualMultiplier : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(MPCounter);
         if (MPCounter >= 10)
         {
             ActualScoreMultiplier_anim.SetTrigger("MultiplierBump");

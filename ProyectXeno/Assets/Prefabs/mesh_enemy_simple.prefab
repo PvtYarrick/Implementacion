@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588686062109308}
   m_LocalRotation: {x: 0.046995573, y: -0, z: -0, w: 0.9988951}
-  m_LocalPosition: {x: -143.60156, y: 157.4152, z: -412.17804}
+  m_LocalPosition: {x: -192.31, y: -61.32, z: -417.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4439930945617198}
@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 1
+  score_enemy: 0
 --- !u!114 &114636673609843284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,3 +225,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 1
+  score_enemy: 0

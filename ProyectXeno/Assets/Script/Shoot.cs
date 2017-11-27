@@ -35,7 +35,7 @@ public class Shoot : MonoBehaviour {
                 Score.score = Score.score + obj.enemyScore();
                 Multiplier.isEnemyDestroyed = true;
                 Multiplier.enemy_destroyed = obj;
-                ActualMultiplier.MPCounter = ActualMultiplier.MPCounter + (EnemyController.score_enemy / 10);
+                //ActualMultiplier.MPCounter = ActualMultiplier.MPCounter + (EnemyController.score_enemy / 10);
             }
         }
 }

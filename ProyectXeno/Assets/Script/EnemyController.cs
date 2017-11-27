@@ -8,13 +8,13 @@ public class EnemyController : MonoBehaviour {
     private Vector3 speed;
     public uint score_enemy;
     protected int enemyLife;
-    //public ParticleSystem _enemykilledparticles;
+    public static ParticleSystem _enemykilledparticles;
     
 
     protected virtual void Start()
     {
         speed = Vector3.back * enemySpeed;
-        //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
+        _enemykilledparticles = GetComponentInChildren<ParticleSystem>();
         Destroy(gameObject, 6f);
 }
 
@@ -22,6 +22,8 @@ public class EnemyController : MonoBehaviour {
     protected virtual void Update()
     {
         transform.Translate(speed);
+        //_enemykilledparticles.transform.SetParent(null);
+
     }
 
     protected virtual void OnTriggerEnter(Collider ShipCol)
@@ -41,7 +43,6 @@ public class EnemyController : MonoBehaviour {
             Multiplier.isEnemyDestroyed = true;
             Multiplier.enemy_destroyed = this;
             ActualMultiplier.MPCounter = ActualMultiplier.MPCounter + (score_enemy / 10);
-            //_enemykilledparticles.transform.SetParent(null);
             //_enemykilledparticles.Play();
             Destroy(gameObject);
         }
