@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour {
 
     public float enemySpeed;
     private Vector3 speed;
-    protected uint score_enemy = 50;
+    public uint score_enemy;
     protected int enemyLife;
     public static int shield_count = 3;
 
@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour {
 
         //GetComponent<Rigidbody>().velocity = Vector3.back * enemySpeed / Time.deltaTime;
         //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
-        
+        //speed = Vector3.back * enemySpeed;
         Destroy(gameObject, 6f);
     }
 
@@ -39,6 +39,9 @@ public class EnemyController : MonoBehaviour {
             enemyLife = 0;
             YellowPowerup._shielded = false;
             Score.score = Score.score + score_enemy;
+            PointsAdder.isEnemyDestroyed = true;
+            PointsAdder.enemy_destroyed = this;
+            Multiplier.MPCounter = Multiplier.MPCounter + (score_enemy / 10);
             Destroy(gameObject);
         }
     }
