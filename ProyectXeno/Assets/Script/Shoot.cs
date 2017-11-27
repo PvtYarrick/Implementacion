@@ -9,19 +9,11 @@ public class Shoot : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        shootspeed = Vector3.forward * shootSpeed;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
-        transform.Translate(shootspeed);
+        GetComponent<Rigidbody>().velocity = Vector3.forward * shootSpeed / Time.deltaTime;
         Destroy(gameObject, 0.5f);
-
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
         if (col.transform.tag == "Enemy")
         {
@@ -30,9 +22,13 @@ public class Shoot : MonoBehaviour {
             if (obj.vida() <= 0)
             {
                 Destroy(col.gameObject);
-                Debug.Log(Score.score);
-                Score.score = Score.score + obj.enemyScore();
+                Score.score = Score.score + (obj.enemyScore() * Multiplier._Multiplier);
+                PointsAdder.isEnemyDestroyed = true;
+                PointsAdder.enemy_destroyed = obj;
+                Multiplier.MPCounter = Multiplier.MPCounter + (obj.enemyScore() / 10);
+                Multiplier.killing_countdown = Multiplier.count;
             }
+            Destroy(gameObject);
         }
 }
 }
