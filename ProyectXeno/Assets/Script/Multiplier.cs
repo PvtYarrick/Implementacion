@@ -25,7 +25,7 @@ public class Multiplier : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(killing_countdown);
+        //Debug.Log(killing_countdown);
         if (MPCounter >= 10)
         {
             ScoreMultiplier_anim.SetTrigger("MultiplierBump");

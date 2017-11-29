@@ -7,11 +7,28 @@ public class SpeedPowerup : MonoBehaviour {
     public static bool speeding = false;
     public Animator Panels;
 
-    void Start()
+    public float powerSpeed;
+    private Vector3 speed;
+
+
+    private void Start()
     {
         Panels = GetComponent<Animator>();
+
+        speed = Vector3.back * powerSpeed;
+
+        //_enemykilledparticles = GetComponentInChildren<ParticleSystem>();
+
+        Destroy(gameObject, 18f);
     }
 
+    // Update is called once per frame
+    private void Update()
+    {
+        transform.Translate(speed);
+    }
+
+   
     private void OnTriggerEnter(Collider other)
     {
 

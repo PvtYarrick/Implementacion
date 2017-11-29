@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
 
     public PlayMode mode;
 
+    
     public static bool isBlueActive = false;
 
     public float moveSpeed = 10f;

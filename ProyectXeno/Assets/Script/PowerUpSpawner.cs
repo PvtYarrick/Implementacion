@@ -10,6 +10,13 @@ public class PowerUpSpawner : MonoBehaviour {
     [SerializeField]
     private float lastPower = 0f;
 
+    [SerializeField]
+    int spawnPos;
+    [SerializeField]
+    int powerUpToSpawn;
+    [SerializeField]
+    int howLong;
+
 
 
     private void Start()
@@ -21,7 +28,9 @@ public class PowerUpSpawner : MonoBehaviour {
     {
         if (lastPower >= newPower)
         {
-            SpawnPower();
+            powerUpToSpawn = Random.Range(0, 3);
+            howLong = Random.Range(1, 5);
+            SpawnPower(powerUpToSpawn, howLong);
             lastPower = 0f;
         }
         else
@@ -32,9 +41,34 @@ public class PowerUpSpawner : MonoBehaviour {
     }
 
 
-    private void SpawnPower()
+    private void SpawnPower(int pwrUp, int lenght)
     {
-        Instantiate(PowerUps[Random.Range(0, 2)], startPos[Random.Range(0, 6)].position, Quaternion.identity);
+        spawnPos = Random.Range(0, 7);
+
+        for (int i = 0; i < lenght; i++)
+        {
+            if(i == 0) {
+                Instantiate(PowerUps[pwrUp], startPos[spawnPos].position, startPos[spawnPos].rotation);
+            }
+            else if (i == 1)
+            {
+                Instantiate(PowerUps[pwrUp], startPos[spawnPos].position + new Vector3(0, 0, 48.5f), startPos[spawnPos].rotation);
+            }
+            else if (i == 2)
+            {
+                Instantiate(PowerUps[pwrUp], startPos[spawnPos].position + (new Vector3(0, 0, 48.5f) * 2), startPos[spawnPos].rotation);
+            }
+            else if (i == 3)
+            {
+                Instantiate(PowerUps[pwrUp], startPos[spawnPos].position + (new Vector3(0, 0, 48.5f) * 3), startPos[spawnPos].rotation);
+            }
+            else if (i == 4)
+            {
+                Instantiate(PowerUps[pwrUp], startPos[spawnPos].position + (new Vector3(0, 0, 48.5f) * 4), startPos[spawnPos].rotation);
+            }
+
+
+        }
     }
 
 }
