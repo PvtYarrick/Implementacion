@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
-public class PostProcessManager : MonoBehaviour {
+public class PostProcessManager : MonoBehaviour
+{
     //remember to drag and drop your scriptable object into this field in the inspector...
     public PostProcessingProfile ppProfile;
 
@@ -12,6 +13,11 @@ public class PostProcessManager : MonoBehaviour {
     public Color cColor = new Vector4(0F, 0F, 0F, 1);
 
     //public static bool blueVignette = false;
+
+    void Start()
+    {
+        SpeedPowerup.speeding = false;
+    }
 
     void Update()
     {
@@ -31,7 +37,7 @@ public class PostProcessManager : MonoBehaviour {
             //Debug.Log("RegularTime");
             ppProfile.vignette.enabled = false;
         }
-        
+
     }
 
     /*void ChangeBloomAtRuntime()
@@ -58,14 +64,16 @@ public class PostProcessManager : MonoBehaviour {
         if (type == 1)
         {
             vignetteSettings.color = aColor;
-        }else if (type == 2)
+        }
+        else if (type == 2)
         {
             vignetteSettings.color = bColor;
-        }else if (type == 3)
+        }
+        else if (type == 3)
         {
             vignetteSettings.color = cColor;
         }
-        
+
 
         ppProfile.vignette.settings = vignetteSettings;
 

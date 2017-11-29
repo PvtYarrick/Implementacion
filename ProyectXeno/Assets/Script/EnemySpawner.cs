@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     public List<GameObject> Enemies;
     public Transform[] startPos;
-    //public int debugSpawnPos;
+    public int debugSpawnPos;
     private int spawnPos;
 
 
@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float lastEnemy = 0f;
 
-   
+
 
     private void Start()
     {
@@ -26,13 +26,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if(lastEnemy >= newEnemy)
+        if (lastEnemy >= newEnemy)
         {
             SpawnEnemy();
             lastEnemy = 0f;
-        }else
+        }
+        else
         {
-            lastEnemy = lastEnemy + Random.Range(1,5);
+            lastEnemy = lastEnemy + Random.Range(1, 5);
         }
 
     }
@@ -40,10 +41,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        spawnPos = Random.Range(0, 7);
-        Instantiate(Enemies[0], startPos[spawnPos].position, startPos[spawnPos].rotation);
+        //spawnPos = Random.Range(0, 7);
+        //Instantiate(Enemies[Random.Range(0,3)], startPos[spawnPos].position, startPos[spawnPos].rotation);
 
-        //Debug rotation code
-        //Instantiate(Enemies[0], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
+        //Debug rotation code;
+        Instantiate(Enemies[0], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
     }
 }

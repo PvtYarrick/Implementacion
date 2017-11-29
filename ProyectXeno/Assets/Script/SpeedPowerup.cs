@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedPowerup : MonoBehaviour {
+public class SpeedPowerup : MonoBehaviour
+{
 
     public static bool speeding = false;
-    public Animator Panels;
 
     public float powerSpeed;
     private Vector3 speed;
 
+    public static int NormalSpeed = 1;
+    public static int ExtraSpeed = 2;
+
 
     private void Start()
     {
-        Panels = GetComponent<Animator>();
+
 
         speed = Vector3.back * powerSpeed;
 
@@ -28,16 +31,16 @@ public class SpeedPowerup : MonoBehaviour {
         transform.Translate(speed);
     }
 
-   
+
     private void OnTriggerEnter(Collider other)
     {
 
 
         if (other.transform.tag == "Ship")
         {
-            Tube.tubeSpeed = 2.5f;
+            Tube.tubeSpeed = ExtraSpeed;
             speeding = true;
-            Panels.SetBool("speeding", true);
+
         }
     }
 
@@ -45,10 +48,11 @@ public class SpeedPowerup : MonoBehaviour {
     {
 
 
-        if (other.transform.tag == "Ship"){ 
-            Tube.tubeSpeed = 1.5f;
+        if (other.transform.tag == "Ship")
+        {
+            Tube.tubeSpeed = NormalSpeed;
             speeding = false;
-            Panels.SetBool("speeding", false);
+
         }
     }
 }

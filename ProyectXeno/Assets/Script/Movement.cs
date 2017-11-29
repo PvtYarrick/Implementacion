@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     public PlayMode mode;
 
-    
+
     public static bool isBlueActive = false;
 
     public float moveSpeed = 10f;
@@ -38,11 +38,15 @@ public class Movement : MonoBehaviour
     public Material mat_ship;
     public Material mat_shielded;
 
+    public static bool winCondition;
+
 
     private void Start()
     {
         rend = GetComponentInChildren<Renderer>();
         rend.material = mat_ship;
+        isBlueActive = false;
+        winCondition = false;
     }
 
     private void Update()
@@ -55,24 +59,24 @@ public class Movement : MonoBehaviour
         if (!isCompleted)
             Play(!isReversed);
 
-        if (Input.GetKey("right"))
+        if (winCondition == false)
         {
-            speed = moveSpeed;
 
-        }
-        if (Input.GetKey("left"))
-        {
-            speed = -moveSpeed;
-        }
+            if (Input.GetKey("right"))
+            {
+                speed = moveSpeed;
 
-        if (currentSeg != whereAmI)
-        {
-            speed = 0f;
-            whereAmI = currentSeg;
-        }
+            }
+            if (Input.GetKey("left"))
+            {
+                speed = -moveSpeed;
+            }
 
-        if (Input.anyKey)
-        {
+            if (currentSeg != whereAmI)
+            {
+                speed = 0f;
+                whereAmI = currentSeg;
+            }
 
             if (Input.GetKey("up") && myTime > nextFire)
             {
@@ -93,16 +97,19 @@ public class Movement : MonoBehaviour
                     myTime = 0.0f;
 
                 }
+            }
 
+
+            if (YellowPowerup._shielded == true)
+            {
+                rend.material = mat_shielded;
+            }
+            else
+            {
+                rend.material = mat_ship;
             }
         }
-        if (YellowPowerup._shielded == true)
-        {
-            rend.material = mat_shielded;
-        }else{
-            rend.material = mat_ship;
-        }
-        }
+    }
 
     private void Play(bool forward = true)
     {
@@ -176,4 +183,5 @@ public class Movement : MonoBehaviour
     }
 
 }
+
 

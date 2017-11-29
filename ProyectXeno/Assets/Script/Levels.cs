@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Levels : MonoBehaviour {
+public class Levels : MonoBehaviour
+{
 
-    
+
     public static Transform currentPos;
     private int placedTubes;
     //public List<int> order;
@@ -25,11 +26,12 @@ public class Levels : MonoBehaviour {
     private void Start()
     {
         currentPos = GetComponent<Transform>();
-        currentPos.position = new Vector3(0,0,48.5f);
-        
+        currentPos.position = new Vector3(0, 0, 48.5f);
+
     }
 
-    void Awake() {
+    void Awake()
+    {
 
         //PlaceForTheNextLevel = transform.position + Vector3.forward * 10;
         if (_instance == null)
@@ -52,7 +54,7 @@ public class Levels : MonoBehaviour {
         score_count++;
         if (!dead_ship)
         {
-            if (Tube.tubeSpeed == 1f)
+            if (Tube.tubeSpeed <= SpeedPowerup.NormalSpeed)
             {
                 if (score_count == 5)
                 {
@@ -62,7 +64,7 @@ public class Levels : MonoBehaviour {
                 currentPos.position = new Vector3(0, 0, 48.5f);
 
             }
-            else if (Tube.tubeSpeed == 2f)
+            else if (Tube.tubeSpeed == SpeedPowerup.ExtraSpeed)
             {
 
                 currentPos.position = new Vector3(0, 0, 52.4f);
@@ -70,10 +72,14 @@ public class Levels : MonoBehaviour {
                 score_count = 0;
             }
         }
+
+
+
     }
 
 
-    public static Levels getInstance() {
+    public static Levels getInstance()
+    {
         return _instance;
     }
 
@@ -81,25 +87,26 @@ public class Levels : MonoBehaviour {
     [SerializeField]
     float length = 18;
 
-    public void IveBeenTriggered() {
+    public void IveBeenTriggered()
+    {
         //for (int i = 0; i < 6; i++) {
         //Debug.Log("Spawn!");
         Vector3 pos = transform.position;
         if (lastInstantiated != null)
-            pos = lastInstantiated.transform.position +  Vector3.forward * length;
-            lastInstantiated = Instantiate(niveles[0], pos, Quaternion.identity);
+            pos = lastInstantiated.transform.position + Vector3.forward * length;
+        lastInstantiated = Instantiate(niveles[0], pos, Quaternion.identity);
         //print(Random.Range(1, 10));
-            //PlaceForTheNextLevel += Vector3.forward * 40;
-            /*GameObject segundoNivel = Instantiate(niveles[i + 1], transform.position, Quaternion.identity);
-            PlaceForTheNextLevel += Vector3.forward * 40;*/
+        //PlaceForTheNextLevel += Vector3.forward * 40;
+        /*GameObject segundoNivel = Instantiate(niveles[i + 1], transform.position, Quaternion.identity);
+        PlaceForTheNextLevel += Vector3.forward * 40;*/
         //Destroy(_nivelactual);
         //_nivelactual = _siguientenivel;
         //i++;
 
-       
+
     }
 
 
 
-   
+
 }
