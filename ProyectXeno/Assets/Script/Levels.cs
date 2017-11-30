@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Levels : MonoBehaviour
 {
 
@@ -22,12 +23,16 @@ public class Levels : MonoBehaviour
 
     private static Levels _instance = null;
 
+    public AudioSource Music;
+    private int NormalPitch = 1;
+    private float timeToDecrease = 2.5f;
+    private float timeToIncrease = 1.5f;
+
 
     private void Start()
     {
         currentPos = GetComponent<Transform>();
         currentPos.position = new Vector3(0, 0, 48.5f);
-
     }
 
     void Awake()
@@ -47,6 +52,8 @@ public class Levels : MonoBehaviour
         IveBeenTriggered();
         IveBeenTriggered();
         IveBeenTriggered();
+        Music.Play();
+        Music.pitch = NormalPitch;
     }
 
     private void Update()
@@ -62,6 +69,11 @@ public class Levels : MonoBehaviour
                     score_count = 0;
                 }
                 currentPos.position = new Vector3(0, 0, 48.5f);
+                Music.pitch -= Time.deltaTime * NormalPitch / timeToDecrease;
+                if (Music.pitch <= 1)
+                {
+                    Music.pitch = NormalPitch;
+                }
 
             }
             else if (Tube.tubeSpeed == SpeedPowerup.ExtraSpeed)
@@ -70,9 +82,17 @@ public class Levels : MonoBehaviour
                 currentPos.position = new Vector3(0, 0, 52.4f);
                 Score.score += (Score.score_add * 2 * Multiplier._Multiplier);
                 score_count = 0;
+                Music.pitch += Time.deltaTime * NormalPitch / timeToIncrease;
             }
         }
-
+        if (dead_ship)
+        {
+            Music.pitch -= Time.deltaTime * NormalPitch / timeToDecrease;
+            if (Music.pitch < 0)
+            {
+                Music.pitch = 0;
+            }
+        }
 
 
     }

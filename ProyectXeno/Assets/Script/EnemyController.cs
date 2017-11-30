@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
     protected int enemyLife;
     public static int shield_count = 3;
 
+
     protected virtual void Start()
     {
 

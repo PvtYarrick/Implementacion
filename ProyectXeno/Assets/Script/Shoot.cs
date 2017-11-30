@@ -19,6 +19,7 @@ public class Shoot : MonoBehaviour {
         {
             EnemyController obj = col.gameObject.GetComponent<EnemyController>();
             obj.hit(1);
+            EnemySpawner.damageTaken.Play();
             if (obj.vida() <= 0)
             {
                 Destroy(col.gameObject);
@@ -27,6 +28,7 @@ public class Shoot : MonoBehaviour {
                 PointsAdder.enemy_destroyed = obj;
                 Multiplier.MPCounter = Multiplier.MPCounter + (obj.enemyScore() / 10);
                 Multiplier.killing_countdown = Multiplier.count;
+                
             }
             Destroy(gameObject);
         }

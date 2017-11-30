@@ -9,12 +9,14 @@ public class PointsAdder : MonoBehaviour {
     public Animator ScoreMultiplier_anim;
     public static bool isEnemyDestroyed;
     public static EnemyController enemy_destroyed;
+    private AudioSource deadEnemy;
 
     // Use this for initialization
     void Start()
     {
         ScoreMultiplier_anim = GetComponent<Animator>();
         ScoreMultiplier_text = GetComponent<Text>();
+        deadEnemy = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class PointsAdder : MonoBehaviour {
             ScoreMultiplier_anim.SetTrigger("Enemy_dies");
             ScoreMultiplier_text.text = "+" + enemy_destroyed.score_enemy;
             isEnemyDestroyed = false;
-            
+            deadEnemy.Play();
+
         }
         if (SpeedPowerup.speeding == true)
         {
