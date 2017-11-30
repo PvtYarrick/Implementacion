@@ -14,8 +14,7 @@ public class Score : MonoBehaviour
     public Text end_text;
     public Text winText;
     public GameObject BluePowerUp;
-
-
+    private AudioSource startSound;
 
     // Use this for initialization
     void Start()
@@ -24,6 +23,8 @@ public class Score : MonoBehaviour
         score_text = GetComponentInChildren<Text>();
         end_text.gameObject.SetActive(false);
         score = 0;
+        startSound = GetComponent<AudioSource>();
+        startSound.Play();
     }
 
     // Update is called once per frame

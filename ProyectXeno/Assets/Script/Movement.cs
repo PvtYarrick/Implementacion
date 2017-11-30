@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Movement : MonoBehaviour
 {
@@ -40,6 +41,9 @@ public class Movement : MonoBehaviour
 
     public static bool winCondition;
 
+    private AudioSource pew;
+    public AudioSource threepew;
+
 
     private void Start()
     {
@@ -47,6 +51,7 @@ public class Movement : MonoBehaviour
         rend.material = mat_ship;
         isBlueActive = false;
         winCondition = false;
+        pew = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -70,6 +75,7 @@ public class Movement : MonoBehaviour
             if (Input.GetKey("left"))
             {
                 speed = -moveSpeed;
+                
             }
 
             if (currentSeg != whereAmI)
@@ -86,6 +92,7 @@ public class Movement : MonoBehaviour
                     Instantiate(Shoot, ShootSpawn.position, Quaternion.identity);
                     nextFire = nextFire - myTime;
                     myTime = 0.0F;
+                    pew.Play();
                 }
                 else
                 {
@@ -95,6 +102,7 @@ public class Movement : MonoBehaviour
                     Instantiate(Shoot, ShootSpawnLeft.position, Quaternion.identity);
                     nextFire = nextFire - myTime;
                     myTime = 0.0f;
+                    threepew.Play();
 
                 }
             }
