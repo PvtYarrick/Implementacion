@@ -44,6 +44,9 @@ public class Movement : MonoBehaviour
     private AudioSource pew;
     public AudioSource threepew;
 
+    //private float endSpeed = -3;
+    //public Rigidbody rb;
+
 
     private void Start()
     {
@@ -52,6 +55,8 @@ public class Movement : MonoBehaviour
         isBlueActive = false;
         winCondition = false;
         pew = GetComponent<AudioSource>();
+        //endSpeed = -3;
+        //rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -64,8 +69,8 @@ public class Movement : MonoBehaviour
         if (!isCompleted)
             Play(!isReversed);
 
-        if (winCondition == false)
-        {
+        //if (winCondition == false)
+       // {
 
             if (Input.GetKey("right"))
             {
@@ -116,7 +121,14 @@ public class Movement : MonoBehaviour
             {
                 rend.material = mat_ship;
             }
-        }
+       // }
+       /* if (winCondition == true)
+        {
+            rb.isKinematic = false;
+            transform.Translate(Vector3.back * endSpeed * Time.deltaTime);
+            Tube.tubeSpeed = 0;
+        }*/
+        
     }
 
     private void Play(bool forward = true)

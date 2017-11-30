@@ -37,6 +37,10 @@ public class EnemySpawner : MonoBehaviour
         {
             lastEnemy = lastEnemy + Random.Range(1, 5);
         }
+        if (Movement.winCondition == true)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -49,4 +53,5 @@ public class EnemySpawner : MonoBehaviour
         //Debug rotation code;
         //Instantiate(Enemies[Random.Range(0,2)], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
     }
+    
 }

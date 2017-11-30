@@ -48,10 +48,10 @@ public class Score : MonoBehaviour
             }
         }
 
-        if (score >= 10000F)
+        if (score >= 2000F)
         {
             Movement.winCondition = true;
-            winText.gameObject.SetActive(true);
+            /*winText.gameObject.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Y))
             {
                 winText.gameObject.SetActive(false);
@@ -61,9 +61,10 @@ public class Score : MonoBehaviour
             {
                 Application.Quit();
             }
+            */
             if (Movement.winCondition == true)
             {
-                score_text.text = "" + score;
+                score_text.text = "2000" ;
             }
         }
 
