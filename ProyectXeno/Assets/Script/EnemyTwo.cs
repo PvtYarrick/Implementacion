@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyTwo : EnemyController {
 
+    public Animator damageFlash;
+
     void Awake()
     {
         enemySpeed = 1f;
@@ -15,6 +17,8 @@ public class EnemyTwo : EnemyController {
     protected override void Start()
     {
         base.Start();
+
+        damageFlash = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -26,5 +30,10 @@ public class EnemyTwo : EnemyController {
     protected override void OnCollisionEnter(Collision ShipCol)
     {
         base.OnCollisionEnter(ShipCol);
+    }
+
+    public void DamageFlash()
+    {
+        damageFlash.SetTrigger("RecivedDamage");
     }
 }

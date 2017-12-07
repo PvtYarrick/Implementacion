@@ -7,6 +7,10 @@ public class Shoot : MonoBehaviour {
     public float shootSpeed;
     private Vector3 shootspeed;
 
+
+
+    
+
     // Use this for initialization
     void Start () {
         GetComponent<Rigidbody>().velocity = Vector3.forward * shootSpeed / Time.deltaTime;
@@ -18,7 +22,12 @@ public class Shoot : MonoBehaviour {
         if (col.transform.tag == "Enemy")
         {
             EnemyController obj = col.gameObject.GetComponent<EnemyController>();
+            EnemyTwo e2 = col.gameObject.GetComponent<EnemyTwo>();
             obj.hit(1);
+            if (obj.vida() == 1)
+            {
+                e2.DamageFlash();
+            }
             EnemySpawner.damageTaken.Play();
             if (obj.vida() <= 0)
             {
@@ -28,7 +37,6 @@ public class Shoot : MonoBehaviour {
                 PointsAdder.enemy_destroyed = obj;
                 Multiplier.MPCounter = Multiplier.MPCounter + (obj.enemyScore() / 10);
                 Multiplier.killing_countdown = Multiplier.count;
-                
             }
             Destroy(gameObject);
         }
