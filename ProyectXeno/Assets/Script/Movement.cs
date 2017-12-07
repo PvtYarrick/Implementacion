@@ -108,7 +108,7 @@ public class Movement : MonoBehaviour
                     nextFire = nextFire - myTime;
                     myTime = 0.0f;
                     threepew.Play();
-
+                isBlueActive = false;
                 }
             }
 

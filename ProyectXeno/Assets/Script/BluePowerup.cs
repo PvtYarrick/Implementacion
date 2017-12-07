@@ -25,7 +25,7 @@ public class BluePowerup : MonoBehaviour {
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         
 
@@ -37,7 +37,7 @@ public class BluePowerup : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
 
         
@@ -47,5 +47,5 @@ public class BluePowerup : MonoBehaviour {
             Movement.isBlueActive = false;
            
         }
-    }
+    }*/
 }

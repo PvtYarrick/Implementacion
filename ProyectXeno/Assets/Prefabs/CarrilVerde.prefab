@@ -68,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1782316152336790}
   m_LocalRotation: {x: -0, y: -0, z: 0.020119593, w: 0.9997976}
-  m_LocalPosition: {x: 2.2456412, y: -85.85145, z: 16.993992}
-  m_LocalScale: {x: 6.9885063, y: 0.168843, z: 33.491417}
+  m_LocalPosition: {x: -12.007012, y: 2.6483946, z: 16.993992}
+  m_LocalScale: {x: 4.956341, y: 0.168843, z: 33.491417}
   m_Children:
   - {fileID: 4058269391858376}
   m_Father: {fileID: 0}
@@ -126,8 +126,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 29.8, z: 1}
-  m_Center: {x: 0, y: 14.4, z: 0}
+  m_Size: {x: 1, y: 12.681071, z: 1}
+  m_Center: {x: -3.735165e-10, y: 5.840534, z: 0}
 --- !u!95 &95375088778336528
 Animator:
   serializedVersion: 3
@@ -137,7 +137,7 @@ Animator:
   m_GameObject: {fileID: 1782316152336790}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d1b9f7d8c889f7d4092e8a94dc34a7ed, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24871d53a023de4cbac4727fec8ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panels: {fileID: 0}
   powerSpeed: 1
 --- !u!198 &198612846069658768
 ParticleSystem:

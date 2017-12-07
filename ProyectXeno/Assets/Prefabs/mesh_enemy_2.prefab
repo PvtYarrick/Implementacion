@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4071608466665522}
   - component: {fileID: 33724610922044786}
   - component: {fileID: 23661578733664044}
+  - component: {fileID: 95132704574313046}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -184,6 +185,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2515893, y: 3.145105, z: 0.79416054}
   m_Center: {x: -1.10496, y: 1.4672341, z: 0.39708015}
+--- !u!95 &95132704574313046
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1609536429748452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ec506e5388e5ba4a8f78169e084e3cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114378260756848298
 MonoBehaviour:
   m_ObjectHideFlags: 1

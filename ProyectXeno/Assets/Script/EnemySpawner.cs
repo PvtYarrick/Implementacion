@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(Enemies[Random.Range(0,3)], startPos[spawnPos].position, startPos[spawnPos].rotation);
 
         //Debug rotation code;
-        //Instantiate(Enemies[Random.Range(0,2)], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
+        //Instantiate(Enemies[2], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
     }
     
 }
