@@ -30,7 +30,7 @@ public class WinText : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.N))
         {
-            Application.Quit();
+            SceneManager.LoadScene("MenuScene");
         }
     }
 }
