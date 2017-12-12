@@ -47,11 +47,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        //spawnPos = Random.Range(0, 7);
-        //Instantiate(Enemies[Random.Range(0,3)], startPos[spawnPos].position, startPos[spawnPos].rotation);
+        spawnPos = Random.Range(0, 7);
+        Instantiate(Enemies[Random.Range(0,3)], startPos[spawnPos].position, startPos[spawnPos].rotation);
 
-        //Debug rotation code;
-        Instantiate(Enemies[1], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
+        //Debug rotation code. Use it to test spawn positions by changing on editor debugSpawnPos. Remember to comentate the rest of the function
+        //Instantiate(Enemies[1], startPos[debugSpawnPos].position, startPos[debugSpawnPos].rotation);
     }
     
 }

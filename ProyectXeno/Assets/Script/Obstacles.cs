@@ -23,5 +23,10 @@ public class Obstacles : EnemyController {
     protected override void OnCollisionEnter(Collision ShipCol)
     {
         base.OnCollisionEnter(ShipCol);
+
+        if (ShipCol.transform.tag == "Bullet")
+        {
+            Destroy(ShipCol.gameObject);
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Ship
   - Shielded
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
