@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour {
     public uint score_enemy;
     protected int enemyLife;
     public static int shield_count = 3;
+    public ParticleSystem DeathEnemyParticle;
 
 
     protected virtual void Start()
@@ -30,7 +31,7 @@ public class EnemyController : MonoBehaviour {
     {
         if (ShipCol.transform.tag == "Ship" && YellowPowerup._shielded == false && enemyLife > 0)
         {
-
+            
             Destroy(ShipCol.gameObject);
             Levels.dead_ship = true;
 
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour {
             PointsAdder.isEnemyDestroyed = true;
             PointsAdder.enemy_destroyed = this;
             Multiplier.MPCounter = Multiplier.MPCounter + (score_enemy / 10);
+            Instantiate(DeathEnemyParticle, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
             Multiplier.killing_countdown = Multiplier.count;
         }

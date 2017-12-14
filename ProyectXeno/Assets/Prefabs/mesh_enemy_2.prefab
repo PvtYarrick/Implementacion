@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734407811858782}
   m_LocalRotation: {x: 0.046995573, y: -0, z: -0, w: 0.9988951}
-  m_LocalPosition: {x: -5.3390846, y: 10.902297, z: 1.4751778}
+  m_LocalPosition: {x: 8.568625, y: 17.585772, z: 95.992744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4071608466665522}
@@ -215,4 +215,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 1
   score_enemy: 0
+  DeathEnemyParticle: {fileID: 0}
   damageFlash: {fileID: 0}
